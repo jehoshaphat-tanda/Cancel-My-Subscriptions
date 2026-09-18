@@ -43,3 +43,4 @@ Open http://localhost:3000.
 ## Security boundary
 
 The API does not write statements, PDFs, signatures, transaction records, or account identifiers to disk or a database. Hosting and reverse-proxy request-body logs must be disabled or redacted before processing real financial data. The current application generates and downloads notices; it does not automatically contact merchants. Automatic delivery requires a verified merchant directory, endpoint-specific authorization, provider credentials, retry limits, and legal review.
+# Cancel-My-Subscriptions
