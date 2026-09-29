@@ -185,7 +185,8 @@ async def parse_text(payload: dict[str, str]) -> ParseResponse:
     text = payload.get("text", "")
     if not text or len(text) > MAX_UPLOAD_BYTES:
         raise HTTPException(status_code=422, detail="Transaction log is empty or too large")
-    return ParseResponse(transactions=_parse_lines(text, "text"), detected_count=len(_parse_lines(text, "text")))
+    transactions = _parse_lines(text, "text")
+    return ParseResponse(transactions=transactions, detected_count=len(transactions))
 
 
 def _signature_bytes(data_url: str) -> bytes:
